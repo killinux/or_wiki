@@ -21,3 +21,15 @@ added: 2026-05-30
 
 ## 我的问题 / 想让 wiki 回答的
 - "NL→优化建模"这条路线的标准范式是什么?瓶颈和评测怎么做?
+
+## LLM 提炼出的去向(摘入了哪些 wiki 词条)
+
+- [[data-grounding-parameterization]]
+- [[llm-or-agents]]
+- [[nlp4lp-benchmark]]
+- [[nl-to-optimization]]
+- [[objective-inference]]
+- [[retrieval-augmented-or]]
+- [[self-debugging]]
+- [[solver-code-generation]]
+- [[structured-intermediate-representation]]
