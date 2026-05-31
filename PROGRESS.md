@@ -2,15 +2,15 @@
 Updated: 2026-05-31
 
 ## Current task   (= first unchecked PLAN milestone)
-M5: 复利维护 —— 本轮已手动跑通一次健康检查(断链/孤立页/frontmatter/标准小节齐全),结果全绿。下一步把这套检查固化成 `scripts/` 里的 lint 脚本,便于以后每次摄入后自动自检。M3/M4 已完成。
+M1–M5 全部完成。当前无进行中的必做项;剩下都是可选增量(见 Next steps)。
 
-## Next steps
-1. 把本轮 lint 固化为 `scripts/lint.sh`:断链、孤立页(不在 MOC)、frontmatter 五字段(title/type/tags/updated/sources)、每页含「## 开放问题」「## 来源」、每条事实可溯源。
-2. (可选,M4 收尾)接 MkDocs/Obsidian 发布静态站。
-3. 继续摄入:completeness 评审点名的 3 个 nice-to-have 缺口可按需补页 —— `modeling-error-taxonomy`、`stochastic-robust-optimization-llm`、`cost-latency-reproducibility-or`。
-4. 把 README「待写」清单更新为实际词条索引(已做)。
+## Next steps(均为可选)
+1. (可选)接 MkDocs/Obsidian 发布静态站。
+2. 继续摄入:completeness 评审点名的 3 个 nice-to-have 缺口可按需补页 —— `modeling-error-taxonomy`、`stochastic-robust-optimization-llm`、`cost-latency-reproducibility-or`。
+3. (可选)给 `scripts/lint.sh` 接 pre-commit hook 或 CI,做到每次提交自动自检。
 
 ## Done   (recent; git history holds the rest)
+- 2026-05-31 — **M5 完成**:实现 `scripts/lint.sh`(替换 M1 占位)——检查 wiki/源 frontmatter、标准小节、`[[wikilink]]` 断链、孤立页(须在 MOC)、「待写」残留;`bash scripts/lint.sh` 全绿(34 词条 + 21 源,退出码 0)。源要点小节兼容「关键内容」(workflow)与「要点摘录」(手写模板)两种措辞。
 - 2026-05-31 — **M3+M4 完成(多智能体 workflow 批量摄入)**:跑通「发现→蓝图→源笔记→词条(作者+对抗式核查)→完备性→整合」六阶段(95 个子智能体,~3.95M tokens)。产出 **34 个 `wiki/` 词条 + 21 篇源笔记**,六大分组互链;`maps/_home.md` 重建为完整 MOC。手动 lint 全绿:0 断链、0 孤立页、frontmatter 齐全、34/34 含开放问题+来源小节。
   - 六大分组:建模(NL→数学规划)/ 求解与工具调用 / 解释与人在回路 / 评测与风险 / LLM 作为优化器 / 训练与开源模型。
   - 覆盖论文:OptiMUS(3 版)、NL4Opt、Chain-of-Experts、ORLM、OptiGuide、OPRO、FunSearch、EoH、ReEvo、MAMO、OptMATH、LLMOPT、ReSocratic/OptiBench、ComplexOR、IndustryOR、ORQA 等。

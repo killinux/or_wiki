@@ -47,3 +47,13 @@ sources: [sources/nl4opt-notes.md]   # 这页依据哪些源
 **产出**:1 篇源笔记 + N 个新建/更新的 `wiki/` 词条 + `maps/` 导航更新。每次摄入是一个小 commit。
 
 **不变式**:`wiki/` 每条主张都能在某篇 `sources/` 里找到出处;孤立(无任何入链)的词条要么补链接、要么并入别页。
+
+## 自检(每次摄入后)
+跑 `bash scripts/lint.sh`(退出码 0 = 全绿)。它机械检查:
+- wiki 词条 frontmatter 五字段(title/type/tags/updated/sources)+ 四小节(核心要点 / 与其它概念的关系 / 开放问题 / 来源);
+- 源笔记 frontmatter(title/type/url/added)+ 要点小节(「关键内容」或「要点摘录」皆可);
+- 所有 `[[wikilink]]` 可解析、无断链;
+- 无孤立页(每个 wiki slug 都出现在 `maps/_home.md`);
+- 无残留「待写」占位。
+
+语义类检查(矛盾标注是否到位、摘要是否需复审)脚本不管,仍靠人工。
